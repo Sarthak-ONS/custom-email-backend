@@ -1,9 +1,14 @@
 const express = require("express");
 const fs = require("fs");
 
+
+require("dotenv").config()
+
 const handlebars = require("handlebars");
 const app = express();
 
+
+const PORT = process.env.PORT || 6000
 
 
 const nodemailer = require("nodemailer");
@@ -70,6 +75,6 @@ app.get("/", (req, res) => {
     res.send("<h1>Everything is fine over here</h1>");
 });
 
-app.listen(4000, () => {
-    console.log(`App is running on Port : 4000`);
+app.listen(PORT, () => {
+    console.log(`App is running on Port : ${PORT}`);
 });
