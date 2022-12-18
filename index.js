@@ -1,7 +1,8 @@
 const express = require("express");
 const fs = require("fs");
+const bodyParser = require('body-parser')
 
-
+express.use(bodyParser.json())
 require("dotenv").config()
 
 const handlebars = require("handlebars");
