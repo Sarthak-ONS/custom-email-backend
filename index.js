@@ -2,11 +2,16 @@ const express = require("express");
 const fs = require("fs");
 const bodyParser = require('body-parser')
 
-express.use(bodyParser.json())
+
+
 require("dotenv").config()
 
 const handlebars = require("handlebars");
 const app = express();
+
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 const PORT = process.env.PORT || 6000
